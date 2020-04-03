@@ -17,14 +17,15 @@
     </div>
 
     <div style="margin-top: 3rem">
-        output
+        output:
+        <div v-html="identicon" />
     </div>
 
 </div>
 
 
 <script src="js/vue.min.js"></script>
-<script src="js/identicon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0"></script>
 <script src="js/myjs.js"></script>
 
 <script>
@@ -34,11 +35,13 @@
             textInput: ''
         },
         computed: { //turn data into viewable values
-
+            identicon: function () {
+             return jdenticon.toSvg(this.textInput, 200);
+            }
         },
         methods: { // use these functions ti change data
             onInput: function (event) {
-                console.log(event.target.value);
+                this.textInput = event.target.value;
             }
         }
     });
