@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <h1>My Identicon</h1>
+
+    <div>
+        input: <input type="text" v-on:input="onInput">
+    </div>
+
+    <div style="margin-top: 3rem">
+        output
+    </div>
+
+</div>
+
+
+<script src="js/vue.min.js"></script>
+<script src="js/identicon.min.js"></script>
+<script src="js/myjs.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: { //initialize our list of 'ingredients'
+            textInput: ''
+        },
+        computed: { //turn data into viewable values
+
+        },
+        methods: { // use these functions ti change data
+            onInput: function (event) {
+                console.log(event.target.value);
+            }
+        }
+    });
+</script>
+</body>
+</html>
